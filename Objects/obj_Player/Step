@@ -13,6 +13,7 @@ vsp = (key_down - key_up) * walkspeed_step;
 hsp_0 = hsp > 0;
 vsp_0 = vsp > 0;
 
+
 //can put (hsp > 0) calc and (bbox_right - x) into its own variable, since calcing more than once
 
 //Movement
@@ -24,7 +25,7 @@ if(key_left || key_right || key_up || key_down){
 		bbox_side = bbox_right;	
 	}else{
 		bbox_side = bbox_left;
-	};
+	};  
 
 	if((tilemap_get_at_pixel(tilemap, bbox_side + hsp, bbox_top) != 0)
 		|| (tilemap_get_at_pixel(tilemap, bbox_side + hsp, bbox_bottom) != 0)){
@@ -55,29 +56,9 @@ if(key_left || key_right || key_up || key_down){
 		vsp = 0;
 	};
 	y += vsp;
-
-	//Sprite
-	if(key_left){
-		image_speed = walkspeed_step / 3;
-		sprite_index = spr_Player_Walk_Left;
-	};
-	if(key_right){
-		image_speed = walkspeed_step / 3;
-		sprite_index = spr_Player_Walk_Right;
-	};
-	if(key_down){
-		image_speed = walkspeed_step / 3;
-		sprite_index = spr_Player_Walk_Down;
-	};
-	if(key_up){
-		image_speed = walkspeed_step / 3;
-		sprite_index = spr_Player_Walk_Up;
-	};
-
 //Player is not moving
 }else{
-	//need to set player sprite to reset to first sprite in sequence
-	image_speed = 0;
+	
 }
 	
 

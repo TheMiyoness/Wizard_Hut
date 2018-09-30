@@ -1,7 +1,21 @@
-image_speed = 0;
+//General Info
 walkspeed = 3.5;
+player_body = spr_Body_Tanned;
+player_hair = spr_Hair_Blue;
+player_torso = spr_Torso_Maroon;
+player_legs = spr_Legs_Teal;
+player_feet = spr_Feet_Brown;
 
+
+//Used for Collisions
 hsp = 0;
 vsp = 0;
-
 tilemap = layer_tilemap_get_id("Collision");
+
+
+//Used for Draw functions
+x_frame = 0;
+y_frame = 10;
+
+x_offset = sprite_get_xoffset(mask_index);
+y_offset = sprite_get_yoffset(mask_index);
